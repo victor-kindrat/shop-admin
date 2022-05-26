@@ -8,7 +8,7 @@ Shop page with administrator menu based on localstorage technology 👩🏻‍�
 - bootstrap slider
 - multiaccount
 
-> [Open]([https://www.google.com](https://allo-admin.netlify.app/))
+> [Open](https://allo-admin.netlify.app/)
 
 ### Preview: 
 ![alt-текст](https://files.fm/thumb_show.php?i=2aja5eesq "prev")
