@@ -175,18 +175,23 @@ $('#descriptionAddAdditionalOptions').click(function() {
 })
 
 $('#navmain').click(function() {
+    $('.description-page').css('display', 'none')
     setScene('main');
 })
 $('#navphohes').click(function() {
+    $('.description-page').css('display', 'none')
     setScene('phones')
 })
 $('#navtv').click(function() {
+    $('.description-page').css('display', 'none')
     setScene('tv')
 })
 $('#navlaptops').click(function() {
+    $('.description-page').css('display', 'none')
     setScene('laptops')
 })
 $('#navlogin').click(function() {
+    $('.description-page').css('display', 'none')
     setScene('login');
 })
 
@@ -411,8 +416,29 @@ $('#addNewGoodSubmit').click(function() {
 })
 
 $('.card__btn_info').click(function() {
+    fetch('https://randomuser.me/api/')
+        .then((res) => {
+            return res.json()
+    })
+        .then((data) => {
+            let user = data.results[0];
+            $('.review__image').css({
+                'background': 'url(' + user.picture.large + ') no-repeat center',
+                'backgroundSize': 'cover'
+            })
+            $('.review__name').text(user.name.first + ' ' + user.name.last)
+            console.log(user)
+        });
+    $.getJSON('https://baconipsum.com/api/?callback=?', { 'type':'meat-and-filler', 'start-with-lorem':'1', 'paras':'2' },
+        function(baconGoodness) {
+            $('.review__text').text('')
+            if (baconGoodness && baconGoodness.length > 0) {
+                for (let i = 0; i < baconGoodness.length; i++) $('.review__text').text($('.review__text').text() + '\n' + baconGoodness[i])
+            }
+        });
     let name = $(this).parent().parent().children('.card__name').text();
     let thisGood;
+
     console.log(name)
     for (let i = 0; i != goods.length; i++) {
         if (goods[i].name == name) {
@@ -424,7 +450,6 @@ $('.card__btn_info').click(function() {
     $('.description-page').css('display', 'block');
     $('.description-page').fadeOut(0);
     $('.description-page').fadeIn(300);
-
     $('#descriptionNameOfDevice').text(thisGood.name);
 
     for (let i = 0; i != thisGood.description.photos.length; i++) {
@@ -454,8 +479,6 @@ $('.card__btn_info').click(function() {
     }
 
     let date = new Date();
-    console.log(date)
-    console.log(date.getDate() + '.' + (date.getMonth() + 1))
     for (let i = 0; i != thisGood.description.deliveryServices.length; i++) {
         $('#descriptionDeliveryContainer').append('<div class="desc_row"><input type="radio" name="delivery" id="deliverySet' + i + '"><label for="deliverySet' + i + '"><div class="description__logo" id="descriptionLogo' + i + '"></div><div class="description__name">' + thisGood.description.deliveryServices[i].name + '</div><div class="description__date">' + (date.getDate() + thisGood.description.deliveryServices[i].days) + '.' + (date.getMonth() + 1) + '</div><div class="description__price">' + thisGood.description.deliveryServices[i].price + '</div></label></div>');
         $('#descriptionLogo' + i).css({
@@ -464,7 +487,7 @@ $('.card__btn_info').click(function() {
         })
     }
 
-    for (let i; i != goods.length; i++) {
+    for (let i = 0; i != goods.length; i++) {
         if (goods[i].category == thisGood.category) {
             $('.desription__same-goods').append('<div class="card"><div class="card__img" style="background: transparent url(' + goods[i].imageUrl + ') no-repeat center; background-size: contain"></div><div class="card__name">' + goods[i].name + '</div><div class="card__description">' + goods[i].shortDescription + '</div><div class="card__description price">' + goods[i].price + '</div><div class="card__row"><a href="' + goods[i].urlToBuy + '" class="card__btn card__btn_buy">Buy</a><button class="card__btn card__btn_info">More info</button></div></div>')
         }
