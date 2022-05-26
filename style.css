@@ -289,7 +289,6 @@
 
 .login__btn {
     padding: 8px 20px;
-    border: none;
     outline: none;
     border: 1px solid #cfcfcf;
     background: transparent;
@@ -424,7 +423,7 @@
     margin-right: 20px;
 }
 
-.addNewGood__addNewCharacteristic {
+.addNewGood__addNewCharacteristic, .addNewGood__addNewDelivery {
     height: 50px;
     width: 100px;
     background: transparent url("./images/addNew.png") center no-repeat;
@@ -496,7 +495,6 @@
 .addNewGood__text {
     font-size: 18px;
     white-space: nowrap;
-    margin-right: 10px;
     line-height: 18px;
     margin: 10px 0;
 }
@@ -544,7 +542,8 @@
     right: 10px;
     width: 0;
     height: 0;
-    border: 6px solid transparent;
+    border-width: 6px 0 0 0;
+    border-style: solid;
     border-color: #fff transparent transparent transparent;
 }
 
@@ -557,7 +556,8 @@
 .select-selected {
     color: #ffffff;
     padding: 8px 16px;
-    border: 1px solid transparent;
+    border-width: 0 0 1px 0;
+    border-style: solid;
     border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
     cursor: pointer;
 }
@@ -597,21 +597,6 @@
 .addNewGood__card-set .addNewGood__input {
     position: relative;
     left: 11px;
-}
-
-.addNewGood__addNewDelivery {
-    height: 50px;
-    width: 100px;
-    background: transparent url("./images/addNew.png") center no-repeat;
-    cursor: pointer;
-    background-size: 25px;
-    border: 1px solid #cccccc;
-    margin-top: 20px;
-    border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
 }
 
 .addNewGood__addAdditionalOptions {
@@ -782,7 +767,7 @@
 .characteristicNameSet::after {
     content: '/';
     position: relative;
-    left: 0%;
+    left: 0;
     margin: 0 20px;
 }
 
