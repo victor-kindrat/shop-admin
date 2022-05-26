@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allo shop</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Allo_logo.svg/320px-Allo_logo.svg.png" alt="logo" class="header__logo">custom</div>
+            <nav class="nav">
+                <ul class="nav__ul">
+                    <li class="nav__item" id="navmain">main</li>
+                    <li class="nav__item" id="navphohes">phones</li>
+                    <li class="nav__item" id="navtv">tv</li>
+                    <li class="nav__item" id="navlaptops">laptops</li>
+                </ul>
+            </nav>
+            <button class="header__btn" id="navlogin">Login</button>
+            <button class="header__btn addbtn" id="addBtn">Add goods</button>
+        </header>
+        <main class="main">
+            <img src="./images/bigBanner.jpg" alt="banner" class="main__banner">
+            <section class="main-page">
+                <h1 class="main__headline">All goods:</h1>
+                <div class="main__row" id="goodsArea">
+                    <!-- cards place  -->
+                </div>
+            </section>
+            <section class="phones">
+                <h1 class="main__headline">Phones:</h1>
+                <div class="main__row">
+                    <!-- cards place  -->
+                </div>
+            </section>
+            <section class="tv">
+                <h1 class="main__headline">TV:</h1>
+                <div class="main__row">
+                    <!-- cards place  -->
+                </div>
+            </section>
+            <section class="laptops">
+                <h1 class="main__headline">Laptops:</h1>
+                <div class="main__row">
+                    <!-- cards place  -->
+                </div>
+            </section>
+            <section class="login">
+                <div class="main__headline">Login</div>
+                <input type="text" class="login__inp" id="userName" placeholder="user name">
+                <input type="password" class="login__inp" id="userPassword" placeholder="password">
+                <div class="login__btnPlace">
+                    <button class="login__btn login__btn_login" id="loginbtn">Log in</button>
+                    <button class="login__btn login__btn_clear" id="clearBtn">clear all</button>
+                    <button class="login__btn login__btn_signup" id="signUpbtn">Sign up</button>
+                </div>
+            </section>
+            <section class="addNewGood">
+                <div class="addNewGood__card-set">
+                    <h2 class="main__headline">Add new good</h2>
+                    <div class="custom-select" style="width: 100%;">
+                        <select name="category" class="addNewGood__select" id="getCategory">
+                            <option value="" selected>Select category</option>
+                            <option value="phone">phone</option>
+                            <option value="tv">tv</option>
+                            <option value="laptop">laptop</option>
+                        </select>
+                    </div>
+                    <input id="getImg" class="addNewGood__input" type="text" placeholder="Gadget image url" autocomplete="off">
+                    <input id="getName" class="addNewGood__input" type="text" placeholder="Gadget name" autocomplete="off">
+                    <input id="getPrice" class="addNewGood__input" type="text" placeholder="Price" autocomplete="off">
+                    <input id="getBuyUrl" class="addNewGood__input" type="text" placeholder="Link to buy this good" autocomplete="off">
+                    <textarea maxlength="300" name="description" class="addNewGood__area" id="getdescription" placeholder="Short description on the card"></textarea>
+                    <div class="addNewGood__btn-place">
+                        <!-- <button id="addNewGoodSubmit" class="addNewGood__btn addNewGood__btn_gray">Description settings</button> -->
+                        <button id="addNewGoodSetDescPage" class="addNewGood__btn addNewGood__btn_gray">Description settings</button>
+                        <button class="addNewGoodClose addNewGood__btn addNewGood__btn_red">Cancel</button>
+                    </div>
+                </div>
+                <!-- desc setts  -->
+                <div class="addNewGood__description-set">
+                    <h2 class="main__headline">Description settings</h2>
+                    <input id="descriptionGetYoutubeUrl" class="addNewGood__input" type="url" placeholder="Youtube url to video review" autocomplete="off">
+                    <div class="addNewGood__row" id="descriptionGetPhotoBox" style="height: auto;">
+                        <div class="addNewGood__addDescImg" id="descriptionAddPhoto"></div>
+                    </div>
+                    <p class="addNewGood__text">Asortiment of colors</p>
+                    <div class="addNewGood__row" id="descriptionGetAsortimentColorRow">
+                        <input type="color" id="descriptionGetAsortimentColor0" class="addNewGood__addNewColor-inp">
+                        <div class="addNewGood__addNewColor" id="descriptionAddAsortimentColor"></div>
+                    </div>
+                    <p class="addNewGood__text">Characteristic:</p>
+                    <div class="addNewGood__column" id="descriptionGetCharacteristikColumn">
+                        <div class="addNewGood__row addNewGood__charcounter">
+                            <input class="addNewGood__input" type="text" id="descriptionGetCharacteristikKey0" placeholder="name">
+                            <p class="addNewGood__tire"> - </p>
+                            <input class="addNewGood__input" type="text" id="descriptionGetCharacteristikValue0" placeholder="value">
+                        </div>
+                        <div class="addNewGood__addNewCharacteristic" id="descriptionAddCharacteristik"></div>
+                    </div>
+                    <p class="addNewGood__text">Delivery services:</p>
+                    <div class="addNewGood__column" id="descriptionGetDeliveryColumn">
+                        <div class="addNewGood__row addNewGood__deliveryCounter">
+                            <input class="addNewGood__input" type="url" id="descriptionGetDeliveryServicesLogo0" placeholder="logo url">
+                            <input class="addNewGood__input" type="text" id="descriptionGetDeliveryServicesName0" placeholder="name">
+                            <input class="addNewGood__input" type="text" id="descriptionGetDeliveryServicesDate0" placeholder="count of days to deliver">
+                            <input class="addNewGood__input" type="text" id="descriptionGetDeliveryServicesPrice0" placeholder="price">
+                        </div>
+                        <div class="addNewGood__addNewDelivery" id="descriptionAddDeliveryServices"></div>
+                    </div>
+                    <p class="addNewGood__text">Additional options(insurance, gluing of protective glass, etc.):</p>
+                    <div class="addNewGood__column" id="descriptionGetOptionsColumn">
+                        <div class="addNewGood__row addNewGood__optionsCount">
+                            <input class="addNewGood__input" type="url" id="descriptionGetAdditionalOptionsLogo0" placeholder="logo url">
+                            <input class="addNewGood__input" type="url" id="descriptionGetAdditionalOptionsOption0" placeholder="Option name">
+                        </div>
+                        <div class="addNewGood__addAdditionalOptions" id="descriptionAddAdditionalOptions"></div>
+                    </div>
+                    <div class="addNewGood__btn-place">
+                        <button id="addNewGoodFullDescClose" class="addNewGood__btn addNewGood__btn_gray">Back</button>
+                        <button id="addNewGoodSubmit" class="addNewGood__btn addNewGood__btn_gray">Add</button>
+                        <button class="addNewGood__btn addNewGood__btn_red addNewGoodClose">Cancel</button>
+                    </div>
+                </div>
+            </section>
+            <section class="addImage">
+                <div class="main__headline">Add image</div>
+                <input type="text" id="newImageUrlInp" class="addNewGood__input" placeholder="image url">
+                <button class="addNewGood__btn addNewGood__btn_gray" id="addNewPhotoConfirmBtn">Add</button>
+                <button class="addNewGood__btn addNewGood__btn_red" id="addNewPhotoCancelBtn">Cancel</button>
+            </section>
+            <section class="description-page">
+                <div class="description-page__row">
+                    <!-- left  -->
+                    <div class="description-page__left">
+                        <h2 class="description-page__headline" id="descriptionNameOfDevice">Name of the device 12352125</h2>
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <!-- slider item place  -->
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="description-page__color-container">
+                            <!-- colors place  -->
+                        </div>
+                    </div>
+                    <!-- right  -->
+                    <div class="description-page__right">
+                        <h3 class="description-page__mini-headline">Characteristic</h3>
+                        <!-- char place  -->
+                    </div>
+                </div>
+                <div class="description-page__video-container">
+                    <h3 class="description-page__headline">Video review</h3>
+                    <iframe class="description-page__video" src="#" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="description-page__order">
+                    <div class="description__left1">
+                        <h3 class="description-page__mini-headline">Additional options:</h3>
+                        <div class="description-page__column" id="descriptionAdditionalContainer">
+                            <!-- additional place -->
+                        </div>
+                        <h3 class="description-page__mini-headline">Delivery:</h3>
+                        <div class="description-page__column" id="descriptionDeliveryContainer">
+                            <!-- delivery place  -->
+                        </div>
+                    </div>
+                    <div class="description__right1">
+                        <!-- review  -->
+                        <div class="review">
+                            <div class="review__row">
+                                <div class="review__user-group">
+                                    <div class="review__image"></div>
+                                    <div class="review__name">Name Surname</div>
+                                </div>
+                                <div class="review__stars">
+                                    <div class="review__star"></div>
+                                    <div class="review__star"></div>
+                                    <div class="review__star"></div>
+                                    <div class="review__star"></div>
+                                    <div class="review__star"></div>
+                                </div>
+                            </div>
+                            <div class="review__text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nobis, quibusdam beatae qui nulla et quos accusantium? Natus cumque quo iusto expedita quisquam, accusantium, modi quidem aliquid recusandae possimus incidunt earum optio quaerat minima
+                                deleniti eveniet quod cum. Labore cupiditate repudiandae ratione consectetur vero itaque ipsam, quos laborum ipsum earum dignissimos sed, dolorum alias quae. Eligendi eos cumque, architecto recusandae perspiciatis cum magni
+                                voluptatem sapiente officia nemo quos, necessitatibus rem? Nam deleniti quam cum magni dignissimos quis magnam sit ad quo illo fuga facilis, aut ipsa sed est, officiis saepe repellendus vitae? Explicabo quos perferendis
+                                aliquid accusamus at? Cupiditate, soluta.
+                            </div>
+                        </div>
+                        <!-- review end  -->
+                    </div>
+                </div>
+                <div class="description__same">
+                    <h3 class="description__mini-headline">You will be interested:</h3>
+                    <div class="desription__same-goods">
+                        <!-- card place  -->
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+
+            <h2 class="footer__headline">Наші партнери: </h2>
+            <div class="footer__partners">
+                <div class="footer__partner" style="background: url('https://www.freepnglogos.com/uploads/xiaomi-png/xiaomi-logo-logos-marcas-8.png') no-repeat no-repeat center center; background-size: contain;"></div>
+                <div class="footer__partner" style="background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/833px-Apple_logo_black.svg.png') no-repeat no-repeat center center; background-size: contain;"></div>
+                <div class="footer__partner" style="background: url('https://pngimg.com/uploads/samsung_logo/samsung_logo_PNG9.png') no-repeat no-repeat center center; background-size: contain;"></div>
+                <div class="footer__partner" style="background: url('https://www.pngplay.com/wp-content/uploads/9/Motorola-Logo-PNG-HD-Quality.png') no-repeat no-repeat center center; background-size: contain;"></div>
+                <div class="footer__partner" style="background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Vivo_Logo.svg/1280px-Vivo_Logo.svg.png') no-repeat no-repeat center center; background-size: contain;"></div>
+            </div>
+            <h2 class="footer__headline">Ми на мапі: </h2>
+            <iframe class="footerFrame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10292.563988798694!2d24.019446897622124!3d49.83980817194488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add6e0c240001%3A0x9c4ae0fb5bdf5a1e!2z0JDQu9C70L4!5e0!3m2!1sru!2sua!4v1651590686566!5m2!1sru!2sua"
+                style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <a href="mailto:allo@nottruemail.com" class="footer__text footer__contact">allo@nottruemail.com</a>
+            <a href="tel:+3801234567890" class="footer__text footer__contact">+3801234567890</a>
+            <p class="footer__text">Copyright &copy;Allo custom 2022</p>
+        </footer>
+    </div>
+    <script src="main.js"></script>
+    <script src="select.js"></script>
+</body>
+
+</html>
