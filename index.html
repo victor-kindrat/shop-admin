@@ -61,8 +61,8 @@
             </section>
             <section class="login">
                 <div class="main__headline">Login</div>
-                <input type="text" class="login__inp" id="userName" placeholder="user name">
-                <input type="password" class="login__inp" id="userPassword" placeholder="password">
+                <label for="userName"></label><input type="text" class="login__inp" id="userName" placeholder="user name">
+                <label for="userPassword"></label><input type="password" class="login__inp" id="userPassword" placeholder="password">
                 <div class="login__btnPlace">
                     <button class="login__btn login__btn_login" id="loginbtn">Log in</button>
                     <button class="login__btn login__btn_clear" id="clearBtn">clear all</button>
@@ -73,18 +73,18 @@
                 <div class="addNewGood__card-set">
                     <h2 class="main__headline">Add new good</h2>
                     <div class="custom-select" style="width: 100%;">
-                        <select name="category" class="addNewGood__select" id="getCategory">
+                        <label for="getCategory"></label><select name="category" class="addNewGood__select" id="getCategory">
                             <option value="" selected>Select category</option>
                             <option value="phone">phone</option>
                             <option value="tv">tv</option>
                             <option value="laptop">laptop</option>
                         </select>
                     </div>
-                    <input id="getImg" class="addNewGood__input" type="text" placeholder="Gadget image url" autocomplete="off">
-                    <input id="getName" class="addNewGood__input" type="text" placeholder="Gadget name" autocomplete="off">
-                    <input id="getPrice" class="addNewGood__input" type="text" placeholder="Price" autocomplete="off">
-                    <input id="getBuyUrl" class="addNewGood__input" type="text" placeholder="Link to buy this good" autocomplete="off">
-                    <textarea maxlength="300" name="description" class="addNewGood__area" id="getdescription" placeholder="Short description on the card"></textarea>
+                    <label for="getImg"></label><input id="getImg" class="addNewGood__input" type="text" placeholder="Gadget image url" autocomplete="off">
+                    <label for="getName"></label><input id="getName" class="addNewGood__input" type="text" placeholder="Gadget name" autocomplete="off">
+                    <label for="getPrice"></label><input id="getPrice" class="addNewGood__input" type="text" placeholder="Price" autocomplete="off">
+                    <label for="getBuyUrl"></label><input id="getBuyUrl" class="addNewGood__input" type="text" placeholder="Link to buy this good" autocomplete="off">
+                    <label for="getdescription"></label><textarea maxlength="300" name="description" class="addNewGood__area" id="getdescription" placeholder="Short description on the card"></textarea>
                     <div class="addNewGood__btn-place">
                         <!-- <button id="addNewGoodSubmit" class="addNewGood__btn addNewGood__btn_gray">Description settings</button> -->
                         <button id="addNewGoodSetDescPage" class="addNewGood__btn addNewGood__btn_gray">Description settings</button>
@@ -94,39 +94,40 @@
                 <!-- desc setts  -->
                 <div class="addNewGood__description-set">
                     <h2 class="main__headline">Description settings</h2>
-                    <input id="descriptionGetYoutubeUrl" class="addNewGood__input" type="url" placeholder="Youtube url to video review" autocomplete="off">
+                    <label for="descriptionGetYoutubeUrl"></label><input id="descriptionGetYoutubeUrl" class="addNewGood__input" type="url" placeholder="Youtube url to video review" autocomplete="off">
                     <div class="addNewGood__row" id="descriptionGetPhotoBox" style="height: auto;">
                         <div class="addNewGood__addDescImg" id="descriptionAddPhoto"></div>
                     </div>
                     <p class="addNewGood__text">Asortiment of colors</p>
                     <div class="addNewGood__row" id="descriptionGetAsortimentColorRow">
-                        <input type="color" id="descriptionGetAsortimentColor0" class="addNewGood__addNewColor-inp">
+                        <label for="descriptionGetAsortimentColor0"></label><input type="color" id="descriptionGetAsortimentColor0" class="addNewGood__addNewColor-inp">
                         <div class="addNewGood__addNewColor" id="descriptionAddAsortimentColor"></div>
                     </div>
                     <p class="addNewGood__text">Characteristic:</p>
                     <div class="addNewGood__column" id="descriptionGetCharacteristikColumn">
                         <div class="addNewGood__row addNewGood__charcounter">
-                            <input class="addNewGood__input" type="text" id="descriptionGetCharacteristikKey0" placeholder="name">
+                            <label for="descriptionGetCharacteristikKey0"></label><input class="addNewGood__input" type="text" id="descriptionGetCharacteristikKey0" placeholder="name">
                             <p class="addNewGood__tire"> - </p>
-                            <input class="addNewGood__input" type="text" id="descriptionGetCharacteristikValue0" placeholder="value">
+                            <label for="descriptionGetCharacteristikValue0"></label><input class="addNewGood__input" type="text" id="descriptionGetCharacteristikValue0" placeholder="value">
                         </div>
                         <div class="addNewGood__addNewCharacteristic" id="descriptionAddCharacteristik"></div>
                     </div>
                     <p class="addNewGood__text">Delivery services:</p>
                     <div class="addNewGood__column" id="descriptionGetDeliveryColumn">
                         <div class="addNewGood__row addNewGood__deliveryCounter">
-                            <input class="addNewGood__input" type="url" id="descriptionGetDeliveryServicesLogo0" placeholder="logo url">
-                            <input class="addNewGood__input" type="text" id="descriptionGetDeliveryServicesName0" placeholder="name">
-                            <input class="addNewGood__input" type="text" id="descriptionGetDeliveryServicesDate0" placeholder="count of days to deliver">
-                            <input class="addNewGood__input" type="text" id="descriptionGetDeliveryServicesPrice0" placeholder="price">
+                            <label for="descriptionGetDeliveryServicesLogo0"></label><label
+                                for="descriptionGetDeliveryServicesLogo0"></label><input class="addNewGood__input" type="url" id="descriptionGetDeliveryServicesLogo0" placeholder="logo url">
+                            <label for="descriptionGetDeliveryServicesName0"></label><input class="addNewGood__input" type="text" id="descriptionGetDeliveryServicesName0" placeholder="name">
+                            <label for="descriptionGetDeliveryServicesDate0"></label><input class="addNewGood__input" type="text" id="descriptionGetDeliveryServicesDate0" placeholder="count of days to deliver">
+                            <label for="descriptionGetDeliveryServicesPrice0"></label><input class="addNewGood__input" type="text" id="descriptionGetDeliveryServicesPrice0" placeholder="price">
                         </div>
                         <div class="addNewGood__addNewDelivery" id="descriptionAddDeliveryServices"></div>
                     </div>
                     <p class="addNewGood__text">Additional options(insurance, gluing of protective glass, etc.):</p>
                     <div class="addNewGood__column" id="descriptionGetOptionsColumn">
                         <div class="addNewGood__row addNewGood__optionsCount">
-                            <input class="addNewGood__input" type="url" id="descriptionGetAdditionalOptionsLogo0" placeholder="logo url">
-                            <input class="addNewGood__input" type="url" id="descriptionGetAdditionalOptionsOption0" placeholder="Option name">
+                            <label for="descriptionGetAdditionalOptionsLogo0"></label><input class="addNewGood__input" type="url" id="descriptionGetAdditionalOptionsLogo0" placeholder="logo url">
+                            <label for="descriptionGetAdditionalOptionsOption0"></label><input class="addNewGood__input" type="url" id="descriptionGetAdditionalOptionsOption0" placeholder="Option name">
                         </div>
                         <div class="addNewGood__addAdditionalOptions" id="descriptionAddAdditionalOptions"></div>
                     </div>
@@ -139,7 +140,7 @@
             </section>
             <section class="addImage">
                 <div class="main__headline">Add image</div>
-                <input type="text" id="newImageUrlInp" class="addNewGood__input" placeholder="image url">
+                <label for="newImageUrlInp"></label><input type="text" id="newImageUrlInp" class="addNewGood__input" placeholder="image url">
                 <button class="addNewGood__btn addNewGood__btn_gray" id="addNewPhotoConfirmBtn">Add</button>
                 <button class="addNewGood__btn addNewGood__btn_red" id="addNewPhotoCancelBtn">Cancel</button>
             </section>
@@ -173,7 +174,7 @@
                 </div>
                 <div class="description-page__video-container">
                     <h3 class="description-page__headline">Video review</h3>
-                    <iframe class="description-page__video" src="#" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="description-page__video" src="#" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="description-page__order">
                     <div class="description__left1">
