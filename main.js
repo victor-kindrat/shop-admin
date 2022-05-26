@@ -1,17 +1,18 @@
+// noinspection JSJQueryEfficiency,JSUnresolvedFunction
+
 let mode = localStorage.getItem('scene') || 'main';
 let users = JSON.parse(localStorage.getItem('users')) || [];
 let goods = JSON.parse(localStorage.getItem('goods')) || [];
 let loggined = false;
-let loginTriger = 0;
 let askiiTable = [];
 let thisSessionImages = [];
 
-for (let i = 0; i != 256; i++) {
+for (let i = 0; i !== 256; i++) {
     askiiTable.push(String.fromCharCode(i));
 }
 let passwordSolve = (password, n = 3) => {
     let chiperPasswoed = '';
-    for (let i = 0; i != password.length; i++) {
+    for (let i = 0; i !== password.length; i++) {
         let currentIndex = askiiTable.indexOf(password[i]);
         if (currentIndex + n <= askiiTable.length - 1) {
             currentIndex += n;
@@ -40,14 +41,14 @@ let inputPage = (array) => {
         $('.tv .main__row').html('');
         $('.laptops .main__row').html('');
         $('.main-page .main__row').html('');
-        for (let i = 0; i != array.length; i++) {
+        for (let i = 0; i !== array.length; i++) {
             let category = array[i].category;
             $('.main-page .main__row').append('<div class="card"><div class="card__img" style="background: transparent url(' + array[i].imageUrl + ') no-repeat center; background-size: contain"></div><div class="card__name">' + array[i].name + '</div><div class="card__description">' + array[i].shortDescription + '</div><div class="card__description price">' + array[i].price + '</div><div class="card__row"><a href="' + array[i].urlToBuy + '" class="card__btn card__btn_buy">Buy</a><button class="card__btn card__btn_info">More info</button><button class="card__btn card__btn_del">X</button></div></div>');
-            if (category == 'phone') {
+            if (category === 'phone') {
                 $('.phones .main__row').append('<div class="card"><div class="card__img" style="background: transparent url(' + array[i].imageUrl + ') no-repeat center; background-size: contain"></div><div class="card__name">' + array[i].name + '</div><div class="card__description">' + array[i].shortDescription + '</div><div class="card__description price">' + array[i].price + '</div><div class="card__row"><a href="' + array[i].urlToBuy + '" class="card__btn card__btn_buy">Buy</a><button class="card__btn card__btn_info">More info</button><button class="card__btn card__btn_del">X</button></div></div>');
-            } else if (category == 'tv') {
+            } else if (category === 'tv') {
                 $('.tv .main__row').append('<div class="card"><div class="card__img" style="background: transparent url(' + array[i].imageUrl + ') no-repeat center; background-size: contain"></div><div class="card__name">' + array[i].name + '</div><div class="card__description">' + array[i].shortDescription + '</div><div class="card__description price">' + array[i].price + '/div><div class="card__row"><a href="' + array[i].urlToBuy + '" class="card__btn card__btn_buy">Buy</a><button class="card__btn card__btn_info">More info</button><button class="card__btn card__btn_del">X</button></div></div>');
-            } else if (category == 'laptop') {
+            } else if (category === 'laptop') {
                 $('.laptops .main__row').append('<div class="card"><div class="card__img" style="background: transparent url(' + array[i].imageUrl + ') no-repeat center; background-size: contain"></div><div class="card__name">' + array[i].name + '</div><div class="card__description">' + array[i].shortDescription + '</div><div class="card__description price">' + array[i].price + '</div><div class="card__row"><a href="' + array[i].urlToBuy + '" class="card__btn card__btn_buy">Buy</a><button class="card__btn card__btn_info">More info</button><button class="card__btn card__btn_del">X</button></div></div>');
             }
         }
@@ -201,9 +202,9 @@ $('#signUpbtn').click(function() {
         password: passwordSolve($('#userPassword').val(), 10)
     };
     let checker = true;
-    if (newUser.userName != admin.userName) {
-        for (let i = 0; i != users.length; i++) {
-            if (users[i].userName == newUser.userName) {
+    if (newUser.userName !== admin.userName) {
+        for (let i = 0; i !== users.length; i++) {
+            if (users[i].userName === newUser.userName) {
                 checker = false;
                 alert('this name is taken')
             }
@@ -232,9 +233,9 @@ $('#loginbtn').click(function() {
     }
     let userFound = false;
     let userIndex = -1;
-    if (loginCandidate.userName != admin.userName) {
-        for (let i = 0; i != users.length; i++) {
-            if (users[i].userName == loginCandidate.userName) {
+    if (loginCandidate.userName !== admin.userName) {
+        for (let i = 0; i !== users.length; i++) {
+            if (users[i].userName === loginCandidate.userName) {
                 userFound = true;
                 userIndex = i;
             }
@@ -302,8 +303,8 @@ $('.card__btn_del').click(function() {
     let arr = goods;
     console.log('orr arr: ', arr)
     let indexOfBadEl = -1;
-    for (let i = 0; i != goods.length; i++) {
-        if (goods[i].name == name) {
+    for (let i = 0; i !== goods.length; i++) {
+        if (goods[i].name === name) {
             indexOfBadEl = i;
         }
     }
@@ -339,14 +340,14 @@ $('#addNewGoodSubmit').click(function() {
     let colorsElements = document.getElementsByClassName('addNewGood__addNewColor-inp');
     let colorsCount = colorsElements.length;
     let colors = [];
-    for (let i = 0; i != colorsCount; i++) {
+    for (let i = 0; i !== colorsCount; i++) {
         colors.push(colorsElements[i].value);
     }
 
     let charElements = document.getElementsByClassName('addNewGood__charcounter');
     let charCount = charElements.length;
     let char = [];
-    for (let i = 0; i != charCount; i++) {
+    for (let i = 0; i !== charCount; i++) {
         let charItem = {
             name: $('#descriptionGetCharacteristikKey' + i).val(),
             value: $('#descriptionGetCharacteristikValue' + i).val(),
@@ -357,7 +358,7 @@ $('#addNewGoodSubmit').click(function() {
     let deliveryElements = document.getElementsByClassName('addNewGood__deliveryCounter');
     let deliveryCount = deliveryElements.length;
     let delivery = [];
-    for (let i = 0; i != deliveryCount; i++) {
+    for (let i = 0; i !== deliveryCount; i++) {
         let deliveryItem = {
             logo: $('#descriptionGetDeliveryServicesLogo' + i).val(),
             name: $('#descriptionGetDeliveryServicesName' + i).val(),
@@ -370,7 +371,7 @@ $('#addNewGoodSubmit').click(function() {
     let additionalElements = document.getElementsByClassName('addNewGood__optionsCount');
     let additionalCount = additionalElements.length;
     let additional = [];
-    for (let i = 0; i != additionalCount; i++) {
+    for (let i = 0; i !== additionalCount; i++) {
         let additionalItem = {
             logo: $('#descriptionGetAdditionalOptionsLogo' + i).val(),
             name: $('#descriptionGetAdditionalOptionsOption' + i).val()
@@ -396,17 +397,17 @@ $('#addNewGoodSubmit').click(function() {
         }
     }
     console.log(newG);
-    if (newG.category.length != 0 && newG.imageUrl.length != 0 && newG.shortDescription.length != 0 && newG.category.length != 0 && newG.price.length != 0 && newG.description.length != 0 && newG.description.videoUrl.length != 0 && newG.description.photos.length != 0 && newG.description.colorAsortiment.length != 0 && newG.description.characteristic.length != 0 && newG.description.deliveryServices.length != 0 && newG.description.additionalOptions.length != 0) {
+    if (newG.category.length !== 0 && newG.imageUrl.length !== 0 && newG.shortDescription.length !== 0 && newG.category.length !== 0 && newG.price.length !== 0 && newG.description.length !== 0 && newG.description.videoUrl.length !== 0 && newG.description.photos.length !== 0 && newG.description.colorAsortiment.length !== 0 && newG.description.characteristic.length !== 0 && newG.description.deliveryServices.length !== 0 && newG.description.additionalOptions.length !== 0) {
         thisSessionImages = [];
         $('.card__name.main__empty').css('display', 'none');
         $('#goodsArea').append('<div class="card"><div class="card__img" style="background: transparent url(' + newG.imageUrl + ') no-repeat center; background-size: contain"></div><div class="card__name">' + newG.name + '</div><div class="card__description">' + newG.shortDescription + '</div><div class="card__description price">' + newG.price + '</div><div class="card__row"><a href="' + newG.urlToBuy + '" class="card__btn card__btn_buy">Buy</a><button class="card__btn card__btn_info">More info</button><button class="card__btn card__btn_del">X</button></div></div>');
-        if (newG.category == 'phone') {
+        if (newG.category === 'phone') {
             $('.phones .main__row').append('<div class="card"><div class="card__img" style="background: transparent url(' + newG.imageUrl + ') no-repeat center; background-size: contain"></div><div class="card__name">' + newG.name + '</div><div class="card__description">' + newG.shortDescription + '</div><div class="card__description price">' + newG.price + '</div><div class="card__row"><a href="' + newG.urlToBuy + '" class="card__btn card__btn_buy">Buy</a><button class="card__btn card__btn_info">More info</button><button class="card__btn card__btn_del">X</button></div></div>');
-        } else if (newG.category == 'tv') {
+        } else if (newG.category === 'tv') {
             $('.tv .main__row').append('<div class="card"><div class="card__img" style="background: transparent url(' + newG.imageUrl + ') no-repeat center; background-size: contain"></div><div class="card__name">' + newG.name + '</div><div class="card__description">' + newG.shortDescription + '</div><div class="card__description price">' + newG.price + '</div><div class="card__row"><a href="' + newG.urlToBuy + '" class="card__btn card__btn_buy">Buy</a><button class="card__btn card__btn_info">More info</button><button class="card__btn card__btn_del">X</button></div></div>');
-        } else if (newG.category == 'laptop') {
+        } else if (newG.category === 'laptop') {
             $('.laptops .main__row').append('<div class="card"><div class="card__img" style="background: transparent url(' + newG.imageUrl + ') no-repeat center; background-size: contain"></div><div class="card__name">' + newG.name + '</div><div class="card__description">' + newG.shortDescription + '</div><div class="card__description price">' + newG.price + '</div><div class="card__row"><a href="' + newG.urlToBuy + '" class="card__btn card__btn_buy">Buy</a><button class="card__btn card__btn_info">More info</button><button class="card__btn card__btn_del">X</button></div></div>');
-        };
+        }
         goods.push(newG);
         localStorage.setItem('goods', JSON.stringify(goods));
         $('.addNewGood').css('display', 'none');
@@ -440,8 +441,8 @@ $('.card__btn_info').click(function() {
     let thisGood;
 
     console.log(name)
-    for (let i = 0; i != goods.length; i++) {
-        if (goods[i].name == name) {
+    for (let i = 0; i !== goods.length; i++) {
+        if (goods[i].name === name) {
             thisGood = goods[i];
         }
     }
@@ -452,25 +453,25 @@ $('.card__btn_info').click(function() {
     $('.description-page').fadeIn(300);
     $('#descriptionNameOfDevice').text(thisGood.name);
 
-    for (let i = 0; i != thisGood.description.photos.length; i++) {
-        if (i == 0) {
+    for (let i = 0; i !== thisGood.description.photos.length; i++) {
+        if (i === 0) {
             $('.carousel-inner').append('<div class="carousel-item active"><img style="max-height: 60vh; width: auto;" src="' + thisGood.description.photos[i] + '" class="d-block w-100" alt="image not defined"></div>');
         } else {
             $('.carousel-inner').append('<div class="carousel-item"><img style="max-height: 60vh; width: auto;" src="' + thisGood.description.photos[i] + '" class="d-block w-100" alt="image not defined"></div>');
         }
     }
 
-    for (let i = 0; i != thisGood.description.colorAsortiment.length; i++) {
+    for (let i = 0; i !== thisGood.description.colorAsortiment.length; i++) {
         $('.description-page__color-container').append('<div class="description-page__color-item" id="color-item' + i + '"></div>');
         $('#color-item' + i).css('background', thisGood.description.colorAsortiment[i])
     }
 
-    for (let i = 0; i != thisGood.description.characteristic.length; i++) {
+    for (let i = 0; i !== thisGood.description.characteristic.length; i++) {
         $('.description-page__right').append('<div class="description-page__characteristic-item"><span class="characteristicNameSet">' + thisGood.description.characteristic[i].name + '</span><span class="characteristicValueSet">' + thisGood.description.characteristic[i].value + '</span></div>');
     }
     $('.description-page__video').attr('src', 'https://www.youtube.com/embed/' + thisGood.description.videoUrl.slice(thisGood.description.videoUrl.lastIndexOf('v=') + 2, thisGood.description.videoUrl.length));
 
-    for (let i = 0; i != thisGood.description.additionalOptions.length; i++) {
+    for (let i = 0; i !== thisGood.description.additionalOptions.length; i++) {
         $('#descriptionAdditionalContainer').append('<div class="desc_row"><input type="checkbox" name="additional" id="additonalOptionSet' + i + '"><label for="additonalOptionSet' + i + '"><div class="description__logo" id="descritionLogo' + i + '"></div> ' + thisGood.description.additionalOptions[i].name + '</label></div>');
         $('#descritionLogo' + i).css({
             'background': 'url("' + thisGood.description.additionalOptions[i].logo + '") center no-repeat',
@@ -479,7 +480,7 @@ $('.card__btn_info').click(function() {
     }
 
     let date = new Date();
-    for (let i = 0; i != thisGood.description.deliveryServices.length; i++) {
+    for (let i = 0; i !== thisGood.description.deliveryServices.length; i++) {
         $('#descriptionDeliveryContainer').append('<div class="desc_row"><input type="radio" name="delivery" id="deliverySet' + i + '"><label for="deliverySet' + i + '"><div class="description__logo" id="descriptionLogo' + i + '"></div><div class="description__name">' + thisGood.description.deliveryServices[i].name + '</div><div class="description__date">' + (date.getDate() + thisGood.description.deliveryServices[i].days) + '.' + (date.getMonth() + 1) + '</div><div class="description__price">' + thisGood.description.deliveryServices[i].price + '</div></label></div>');
         $('#descriptionLogo' + i).css({
             'background': 'url("' + thisGood.description.deliveryServices[i].logo + '") no-repeat center',
@@ -487,8 +488,8 @@ $('.card__btn_info').click(function() {
         })
     }
 
-    for (let i = 0; i != goods.length; i++) {
-        if (goods[i].category == thisGood.category) {
+    for (let i = 0; i !== goods.length; i++) {
+        if (goods[i].category === thisGood.category) {
             $('.desription__same-goods').append('<div class="card"><div class="card__img" style="background: transparent url(' + goods[i].imageUrl + ') no-repeat center; background-size: contain"></div><div class="card__name">' + goods[i].name + '</div><div class="card__description">' + goods[i].shortDescription + '</div><div class="card__description price">' + goods[i].price + '</div><div class="card__row"><a href="' + goods[i].urlToBuy + '" class="card__btn card__btn_buy">Buy</a><button class="card__btn card__btn_info">More info</button></div></div>')
         }
     }
