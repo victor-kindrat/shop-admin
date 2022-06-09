@@ -1,5 +1,6 @@
 # Allo shop admin
 Shop page with administrator menu based on localstorage technology 👩🏻‍💻
+<a href="https://wakatime.com/badge/github/victor-kindrat/shop-admin"><img src="https://wakatime.com/badge/github/victor-kindrat/shop-admin.svg" alt="wakatime"></a>
 ---
 #### Features: 
 - in localstorage information save
